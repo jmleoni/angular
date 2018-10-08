@@ -124,7 +124,7 @@ export class PreActivation {
       }
 
       if (shouldRunGuardsAndResolvers) {
-        const outlet = context !.outlet !;
+        const outlet = context ? context.outlet : null;
         if (outlet && outlet.component) {
           this.canDeactivateChecks.push(new CanDeactivate(outlet.component, curr));
         }
